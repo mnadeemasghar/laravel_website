@@ -1,0 +1,322 @@
+:root {
+    --background-color: #f9f9f9;
+    --background-color-dark: #f4f4f4;
+    --main-green-color: #00ada3;
+    --main-green-color-dark: #00838f;
+    --main-green-color-light: #e5f2f4;
+    --main-titleblue: #3d4465;
+    --main-orange: #ffab2d;
+    --main-purple: #6647bf;
+    --main-blue: #374c98;
+    --main-red: #cd541f;
+    --main-border-radius: 15px;
+    --main-green-gradient: linear-gradient(90deg, rgba(14,14,14,1) 16%, rgba(0,173,163,1) 61%);
+}
+
+
+.pagination .active a{
+    background-color:var(--main-green-color) !important;
+    color:white !important;
+}
+.pagination li a {
+    color: var(--main-green-color) !important;
+}
+
+    .pagination li a:hover {
+        background-color: var(--main-green-color) !important;
+        color: white !important;
+        text-decoration: underline !important;
+    }
+    .pagination .active a:hover {
+        background-color: var(--main-green-color-dark) !important;  
+    }
+
+.readmore{
+    color:var(--main-green-color);
+}
+
+
+.crop-text-1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-box-orient: vertical;
+}
+
+
+
+.btn-lg-platform {
+    background-color: var(--main-green-color) !important;
+    color: white !important;
+    font-weight: 500 !important;
+    border-radius: var(--main-border-radius) !important;
+    font-size: 1rem !important;
+    padding: 1.3rem 5.5rem !important;
+}
+a.btn:hover{
+    background-color:white !important;
+}
+
+a:hover{
+
+    color:var(--main-green-color) !important;   
+    text-decoration:underline;
+}
+
+.card {
+    border-radius: var(--main-border-radius) !important;
+}
+
+.cardhover {
+    margin-top: -4rem !important;
+}
+
+body{
+    line-height:1.3 !important;
+}
+html,
+body,
+header,
+.view {
+    height: 100%;
+}
+
+.passive2sec {
+    background-image: url('img/Mainpage/Passive Income-min.png');
+    background-repeat: no-repeat;
+    background-attachment: initial;
+    background-position: 80%;
+    background-size: 25%;
+}
+.img-foundation {
+    width: 20vw;
+    height: 30rem;
+    background-position: center;
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+
+@media only screen and (max-width: 740px) {
+    .img-foundation {
+        height: 10rem;
+    }
+
+    .passive2sec {
+        background-image: none;
+    }
+
+    html,
+    body,
+    header,
+    .view {
+        height: 100vh;
+    }
+
+    .top-nav-collapse {
+        background-color: white !important;
+    }
+}
+.platformgradientbg {
+    background: var(--main-green-gradient);
+}
+.top-nav-collapse {
+    background: rgb(14,14,14);
+    background: linear-gradient(90deg, rgba(14,14,14,1) 16%, rgba(0,173,163,1) 61%);
+}
+    .top-nav-collapse a{
+        color:white;
+    }
+
+    .navbar:not(.top-nav-collapse) {
+        background: transparent !important;
+    }
+
+.passivehomepage {
+    background-image: url('/img/Mainpage/top-min.png');
+    background-repeat: no-repeat;
+    background-attachment: initial;
+    background-position: 80%;
+    background-size: contain;
+}
+
+
+@media only screen and (max-width: 991px) {
+
+  
+
+    .passivehomepage {
+        background-image: none !important;
+    }
+    .navbar:not(.top-nav-collapse) {
+        background: rgb(14,14,14) !important;
+        background: linear-gradient(90deg, rgba(14,14,14,1) 16%, rgba(0,173,163,1) 61%) !important;
+    }
+
+    .cardhover {
+        margin-top: -1rem !important;
+    }
+}
+
+.nav-link {
+    font-weight: 400 !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+}
+
+.loginitems {
+    border: 2px solid white !important;
+    border-radius: 25px;
+}
+
+.navbar:not(.top-nav-collapse) {
+    background: transparent;
+}
+
+
+.navbar-collapse.show .nav-link, .navbar-toggler i {
+    color: white ;
+}
+
+.card .view{
+    height:unset !important;
+}
+
+.nav-link {
+    transition: 1s !important;
+    position:relative;
+}
+    .nav-link:hover{
+        color:white !important;
+    }
+    .nav-link:hover:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border-bottom: 2px solid;
+        
+    }
+.navregister:hover:before {
+    width: 100% !important;
+    height: 90% !important;
+    width:80% !important;
+    margin:auto !important;
+    right:0;
+}
+
+
+.creators:hover .creatorstext {
+    animation: 2s fadeIn;
+    animation-fill-mode: forwards;
+    visibility: visible;
+}
+
+.creators .maskplatform {
+    background: transparent;
+    animation: 2s fadeIn;
+    animation-fill-mode: forwards;
+    visibility: visible;
+}
+.creators:hover .maskplatform {
+    background: rgb(14,14,14);
+    background: linear-gradient(90deg, rgba(14,14,14,0.7) 0%, rgba(9,168,158,0.7) 100%);
+    border-radius:var(--main-border-radius) !important;
+}
+
+.creatorstext {
+    visibility: hidden;
+   
+}
+#login label{
+    margin-bottom:0px !important;
+    margin-top:1rem !important;
+}
+
+
+
+@keyframes fadeIn {
+    50% {
+        visibility: hidden;
+    }
+
+    100% {
+        visibility: visible;
+    }
+}
+
+.icon-sm {
+    height: 37px !important;
+}
+
+.icon-md {
+    height: 50px !important;
+}
+
+.icon-lg {
+   height: 75px !important;
+}
+
+
+/*Ranks*/
+@media only screen and (min-width: 1000px) {
+    .ranks .card:nth-child(1) {
+        margin-top: 5rem;
+    }
+
+    .ranks .card:nth-child(2) {
+        margin-top: 4.5rem;
+    }
+
+    .ranks .card:nth-child(3) {
+        margin-top: 4rem;
+    }
+
+    .ranks .card:nth-child(4) {
+        margin-top: 3.5rem;
+    }
+
+    .ranks .card:nth-child(5) {
+        margin-top: 3rem;
+    }
+
+    .ranks .card:nth-child(6) {
+        margin-top: 2.5rem;
+    }
+
+
+    .ranks .card:nth-child(7) {
+        margin-top: 2rem;
+    }
+
+    .ranks .card:nth-child(8) {
+        margin-top: 1.5rem;
+    }
+
+    .ranks .card:nth-child(9) {
+        margin-top: 1rem;
+    }
+
+    .ranks .card:nth-child(10) {
+        margin-top: 0.5rem;
+    }
+}
+.ranks .card{
+    margin-top:1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

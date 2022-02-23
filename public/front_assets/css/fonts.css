@@ -1,0 +1,16 @@
+
+body {
+    font-family: 'Poppins', sans-serif !important;
+    color: var(--main-green-color);
+    background-color: var(--background-color) !important;
+    
+}
+
+h1, h2, h3, h4, h5, h6, p, label, a, li, i, span {
+    line-height: 1.5 !important;
+    
+}
+h1, h2, h3, h4, h5, h6, p, label, a, li, span {
+    font-weight: 300 !important;
+}
+

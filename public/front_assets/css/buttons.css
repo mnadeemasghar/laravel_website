@@ -1,0 +1,103 @@
+
+
+.btn-lg-platform {
+    background-color: var(--main-green-color) !important;
+    color: white !important;
+    font-weight: 500 !important;
+    border-radius: var(--main-border-radius) !important;
+    font-size: 1rem !important;
+    padding: 1.3rem 5.5rem !important;
+}
+
+.btn-md-platform {
+    background-color: var(--main-green-color) !important;
+    color: white !important;
+    font-weight: 500 !important;
+    border-radius: var(--main-border-radius) !important;
+    font-size: 1rem !important;
+    padding: 0.6rem 6.5rem !important;
+}
+
+.btn-sm-platform {
+    background-color: var(--main-green-color) !important;
+    color: white !important;
+    font-weight: 500 !important;
+    border-radius: var(--main-border-radius) !important;
+    font-size: 1rem !important;
+    padding: 0.6rem 2.5rem !important;
+}
+
+
+.btn-news {
+    background-color: var(--main-green-color) !important;
+    color: white !important;
+    font-weight: 500 !important;
+    border-radius: var(--main-border-radius) !important;
+    font-size: 1rem !important;
+    padding: 0.6rem 0rem !important;
+    width:100%;
+}
+
+.btnplatfornfoundation {
+    background-color: var(--main-green-color) !important;
+    color: white !important;
+    font-weight: 500 !important;
+    display:inline-block;
+    font-size: 1rem !important;
+    padding: 0.6rem 2rem !important;
+
+    
+}
+    .btnplatfornfoundation:hover {
+        background-color: white !important;
+        color: var(--main-green-color) !important;        
+    }
+
+.btnplatformtransparent {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+}
+
+.btnplatformtransparent:hover{
+    background-color:white;
+    color:var(--main-green-color);
+}
+
+@media only screen and (max-width: 992px) {
+
+    .btn-lg-platform {
+        background-color: var(--main-green-color) !important;
+        color: white !important;
+        font-weight: 500 !important;
+        border-radius: var(--main-border-radius) !important;
+        font-size: 1rem !important;
+        padding: 1.5rem 3.5rem !important;
+    }
+
+    .btn-md-platform {
+        background-color: var(--main-green-color) !important;
+        color: white !important;
+        font-weight: 500 !important;
+        border-radius: var(--main-border-radius) !important;
+        font-size: 1rem !important;
+        padding: 0.6rem 2.5rem !important;
+    }
+
+    .btn-sm-platform {
+        background-color: var(--main-green-color) !important;
+        color: white !important;
+        font-weight: 500 !important;
+        border-radius: var(--main-border-radius) !important;
+        font-size: 1rem !important;
+        padding: 0.3rem 1rem !important;
+    }
+
+
+
+    .btnplatfornfoundation {
+  
+        padding: 0.6rem 1rem !important;
+    }
+
+}

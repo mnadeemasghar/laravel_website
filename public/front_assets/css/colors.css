@@ -1,0 +1,41 @@
+.platform-green-dark {
+    color: var(--main-green-color-dark);
+}
+
+.bgplatform-green-dark {
+    background-color: var(--main-green-color-dark);
+}
+.bgplatform-green {
+    background-color: var(--main-green-color);
+}
+
+
+.platform-green {
+    color: var(--main-green-color) !important;
+}
+
+.white-hover:hover{
+    color:white !important;
+}
+
+    a.platform-green:hover {
+        color: var(--main-green-color-dark) !important;
+    }
+
+.platform-orange {
+    color: var(--main-orange);
+}
+
+.platform-purple {
+    color: var(--main-purple);
+}
+
+.platform-blue {
+    color: var(--main-blue);
+}
+
+.platform-red {
+    color: var(--main-red);
+}
+
+
