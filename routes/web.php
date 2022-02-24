@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,13 +43,13 @@ Route::get('faq', function () {
     return view('faq');
 })->name('faq');
 
-Route::get('login', function () {
+Route::get('user/login', function () {
     return view('login');
-})->name('login');
+})->name('user.login');
 
-Route::get('signup', function () {
+Route::get('user/signup', function () {
     return view('signup');
-})->name('signup');
+})->name('user.signup');
 
 Route::get('forgotpassword', function () {
     return view('forgotpassword');
