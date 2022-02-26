@@ -29,10 +29,10 @@
     <div class="collapse navbar-collapse mx-auto pr-5 " id="navbarTogglerDemo02">
         <ul class="navbar-nav mr-md-3 mx-auto ">
             <li class="nav-item d-inline-block d-lg-none">
-                <a class="nav-link " href="{{route('user.signup')}}" data-offset="90">Sign Up</a>
+                <a class="nav-link " href="{{route('signup')}}" data-offset="90">Sign Up</a>
             </li>
             <li class="nav-item d-inline-block d-lg-none">
-                <a class="nav-link " href="{{route('user.login')}}" data-offset="90">Login-M</a>
+                <a class="nav-link " href="{{route('login')}}" data-offset="90">Login-M</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{route('index')}}">Home<span class="sr-only">(current)</span></a>
@@ -49,44 +49,42 @@
         </ul>
         <ul class="navbar-nav nav-flex-icons loginitems px-2 d-none d-md-flex">
             <li class="nav-item">
-                <a class="nav-link navregister" href="{{route('user.signup')}}" data-offset="90">Sign Up</a>
+                <a class="nav-link navregister" href="{{route('signup')}}" data-offset="90">Sign Up</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navregister" href="{{route('user.login')}}" data-offset="90">Login</a>
+                <a class="nav-link navregister" href="{{route('login')}}" data-offset="90">Login</a>
             </li>
         </ul>
     </div>
 </nav>
 <div class="d-flex align-items-center justify-content-center" style="min-height:100vh; background-image: url('front_assets/img/Mainpage/Section 1-min.png'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
-<div class="container h-100 py-4 py-md-5">
-<div class="row justify-content-center align-items-center">
-<div class="col-12 col-lg-6 black-text ">
-<div class="card">
-<div class="card-body">
-<h4 class="mb-4"> Log In </h4>
-<form method="post" action="">
-<div class="text-danger validation-summary-valid" data-valmsg-summary="true"><ul><li style="display:none"></li>
-</ul></div>
-<label for="Input_Email">Your Email</label>
-<input class="form-control " type="email" data-val="true" data-val-email="The Email field is not a valid e-mail address." data-val-required="The Email field is required." id="Input_Email" name="Input.Email" value="">
-<label for="Input_Password">Your Password</label>
-<input type="password" class="form-control" data-val="true" data-val-required="The Password field is required." id="Input_Password" name="Input.Password">
-<div class="form-group mt-3">
-<div class="custom-control custom-checkbox">
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked" data-val="true" data-val-required="The Remember me? field is required." name="Input.RememberMe" value="true">
-<label class="custom-control-label" for="defaultUnchecked"> Remember me?</label>
-</div>
-</div>
-<button type="submit" class="btn btn-lg-platform w-100 my-3"> Log In </button>
-<input name="__RequestVerificationToken" type="hidden" value="CfDJ8O5gIo7GiTBLtnRDPhfOgvP2ExlV3L6MYEiWwBYYPGlJchlBN0FV_IinltCGTErkgqMdlOfWusk6NcfJ3M1puRsM20mxIu5RZEQnxF3vhk92KDgRGjAwHAUIxMM7DoUeJZCp6jGp7-at4inokOS7EWM" /><input name="Input.RememberMe" type="hidden" value="false"></form>
-<div class="text-center">
-<p class=" text-center  small">Don't remember password? <a class="text-decoration-none font-weight-bold platform-green" href="{{route('forgotpassword')}}">Reset your password</a></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+    <div class="container h-100 py-4 py-md-5">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-12 col-lg-6 black-text ">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="mb-4"> Log In </h4>
+                        <form method="GET" action="{{route('package')}}">
+                            <label for="Input_Email">Your Email</label>
+                            <input class="form-control " type="email" data-val="true" data-val-email="The Email field is not a valid e-mail address." data-val-required="The Email field is required." id="Input_Email" name="Input.Email" value="">
+                            <label for="Input_Password">Your Password</label>
+                            <input type="password" class="form-control" data-val="true" data-val-required="The Password field is required." id="Input_Password" name="Input.Password">
+                            <div class="form-group mt-3">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="defaultUnchecked" data-val="true" data-val-required="The Remember me? field is required." name="Input.RememberMe" value="true">
+                                    <label class="custom-control-label" for="defaultUnchecked"> Remember me?</label>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-lg-platform w-100 my-3"> Log In </button>
+                        </form>
+                        <div class="text-center">
+                            <p class=" text-center  small">Don't remember password? <a class="text-decoration-none font-weight-bold platform-green" href="{{route('forgotpassword')}}">Reset your password</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 </header>
 

@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Artisan;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -43,17 +41,49 @@ Route::get('faq', function () {
     return view('faq');
 })->name('faq');
 
-Route::get('user/login', function () {
+Route::get('login', function () {
     return view('login');
-})->name('user.login');
+})->name('login');
 
-Route::get('user/signup', function () {
+Route::get('signup', function () {
     return view('signup');
-})->name('user.signup');
+})->name('signup');
 
 Route::get('forgotpassword', function () {
     return view('forgotpassword');
 })->name('forgotpassword');
+
+Route::get('main', function () {
+    return view('main');
+})->name('main');
+
+Route::get('recharge', function () {
+    return view('recharge');
+})->name('recharge');
+
+Route::get('withdraw', function () {
+    return view('withdraw');
+})->name('withdraw');
+
+Route::get('referal', function () {
+    return view('referal');
+})->name('referal');
+
+Route::get('package', function () {
+    return view('package');
+})->name('package');
+
+Route::get('deposit', function () {
+    return view('deposit');
+})->name('deposit');
+
+Route::get('ads', function () {
+    return view('ads');
+})->name('ads');
+
+
+
+
 
 
 
@@ -78,7 +108,3 @@ Route::get('home', function () {
 })->name('admin/home');
 
 
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
