@@ -29,7 +29,7 @@
     <div class="collapse navbar-collapse mx-auto pr-5 " id="navbarTogglerDemo02">
         <ul class="navbar-nav mr-md-3 mx-auto ">
             <li class="nav-item d-inline-block d-lg-none">
-                <a class="nav-link " href="{{route('signup')}}" data-offset="90">Sign Up</a>
+                <a class="nav-link " href="{{route('register')}}" data-offset="90">Sign Up</a>
             </li>
             <li class="nav-item d-inline-block d-lg-none">
                 <a class="nav-link " href="{{route('login')}}" data-offset="90">Login-M</a>
@@ -49,7 +49,7 @@
         </ul>
         <ul class="navbar-nav nav-flex-icons loginitems px-2 d-none d-md-flex">
             <li class="nav-item">
-                <a class="nav-link navregister" href="{{route('signup')}}" data-offset="90">Sign Up</a>
+                <a class="nav-link navregister" href="{{route('register')}}" data-offset="90">Sign Up</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link navregister" href="{{route('login')}}" data-offset="90">Login</a>
@@ -64,11 +64,24 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="mb-4"> Log In </h4>
-                        <form method="GET" action="{{route('package')}}">
-                            <label for="Input_Email">Your Email</label>
-                            <input class="form-control " type="email" data-val="true" data-val-email="The Email field is not a valid e-mail address." data-val-required="The Email field is required." id="Input_Email" name="Input.Email" value="">
-                            <label for="Input_Password">Your Password</label>
-                            <input type="password" class="form-control" data-val="true" data-val-required="The Password field is required." id="Input_Password" name="Input.Password">
+                        <form method="POST" action="{{ route('login') }}">
+                        @csrf
+                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+
+                            @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+
+                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
+                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                            @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                             <div class="form-group mt-3">
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" class="custom-control-input" id="defaultUnchecked" data-val="true" data-val-required="The Remember me? field is required." name="Input.RememberMe" value="true">

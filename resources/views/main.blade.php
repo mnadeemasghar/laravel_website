@@ -160,7 +160,7 @@ h1 {
     <div class="collapse navbar-collapse mx-auto pr-5 " id="navbarTogglerDemo02">
         <ul class="navbar-nav mr-md-3 mx-auto ">
             <li class="nav-item d-inline-block d-lg-none">
-                <a class="nav-link " href="{{route('signup')}}" data-offset="90">Sign Up</a>
+                <a class="nav-link " href="{{route('register')}}" data-offset="90">Sign Up</a>
             </li>
             <li class="nav-item d-inline-block d-lg-none">
                 <a class="nav-link " href="{{route('login')}}" data-offset="90">Login-M</a>
@@ -180,7 +180,7 @@ h1 {
         </ul>
         <ul class="navbar-nav nav-flex-icons loginitems px-2 d-none d-md-flex">
             <li class="nav-item">
-                <a class="nav-link navregister" href="{{route('signup')}}" data-offset="90">Sign Up</a>
+                <a class="nav-link navregister" href="{{route('register')}}" data-offset="90">Sign Up</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link navregister" href="{{route('login')}}" data-offset="90">Login</a>
