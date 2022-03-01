@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -97,12 +100,16 @@ Route::get('/', function () {
 //     return view('admin/auth/login');
 // })->name('admin/login');
 
-Route::get('admin/login', function () {
-    return view('admin/auth/login');
-})->name('admin/login');
+// Route::get('admin/login', function () {
+//     return view('admin.auth.login');
+// })->name('admin/login');
+
+Route::get('admin/home', function () {
+    return view('admin.home');
+})->name('admin.home');
 
 Route::get('forget_password', function () {
-    return view('admin/auth/forget_password');
+    return view('admin.auth.forget_password');
 })->name('admin/forget_password');
 
 Route::get('home', function () {
@@ -117,4 +124,5 @@ Route::get('home', function () {
 
 Auth::routes(['verify' => true]);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/users', [UserController::class, 'index'])->name('users.index');

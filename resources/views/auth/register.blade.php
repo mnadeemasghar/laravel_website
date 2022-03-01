@@ -48,44 +48,7 @@
 
 <body id="login">
     <header>
-        <nav class="navbar navbar-expand-xl navbar-dark fixed-top scrolling-navbar shadow-none">
-            <a class="navbar-brand ml-lg-5 ml-1" href="/">
-                <img class="icon-sm" src="{{asset('front_assets/img/Logo/logo.png')}}" />
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
-            </button>
-            <div class="collapse navbar-collapse mx-auto pr-5 " id="navbarTogglerDemo02">
-                <ul class="navbar-nav mr-md-3 mx-auto ">
-                    <li class="nav-item d-inline-block d-lg-none">
-                        <a class="nav-link " href="{{route('register')}}" data-offset="90">Sign Up</a>
-                    </li>
-                    <li class="nav-item d-inline-block d-lg-none">
-                        <a class="nav-link " href="{{route('login')}}" data-offset="90">Login-M</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('index')}}">Home<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('about')}}">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('faq')}}" data-offset="90">FAQ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('privacy')}}" data-offset="90">Privacy</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav nav-flex-icons loginitems px-2 d-none d-md-flex">
-                    <li class="nav-item">
-                        <a class="nav-link navregister" href="{{route('register')}}" data-offset="90">Sign Up</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link navregister" href="{{route('login')}}" data-offset="90">Login</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+        @include('layouts.nav')
 
         <div class="d-flex align-items-center justify-content-center" style="min-height:100vh; background-image: url('front_assets/img/Mainpage/Section 1-min.png'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
             <div class="container h-100 py-3 py-md-5 mt-5">

@@ -80,7 +80,14 @@
                             <a href=""><i class="icon-settings"></i></a>
                         </li>
                         <li>
-                            <a href="{{route('login')}}" class="icon-menu" style="background: indianred;border-radius: 5px;margin-left: 5px;"><i class="icon-power"></i>Logout</a>
+                            <a class="icon-menu" style="background: indianred;border-radius: 5px;margin-left: 5px;" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                <i class="icon-power"></i>{{ __('Logout') }}
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
                         </li>
                     </ul>
                 </div>
@@ -110,7 +117,7 @@
                     <li>
                         <a href="#forms" class="has-arrow mb-1"><i class="fa fa-users"></i><span>Users </span></a>
                         <ul>
-                            <li><a href="">All Users</a></litName>
+                            <li><a href="{{route('users.index')}}">All Users</a></litName>
                             <li><a href="">Active Users</a></li>
                             <li><a href="">Un-Active Users</a></li>
                         </ul=>

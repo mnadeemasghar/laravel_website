@@ -69,9 +69,9 @@
                                     <span>Remember me</span>
                                 </label>
                             </div>
-                            <a href="{{route('home')}}" type="submit" class="btn btn-primary btn-lg btn-block" style="background: linear-gradient(-60deg, #3DA9FC 50%, #FF8C67 50%); border: none;">LOGIN</a>
+                            <a href="{{route('admin.home')}}" type="submit" class="btn btn-primary btn-lg btn-block" style="background: linear-gradient(-60deg, #3DA9FC 50%, #FF8C67 50%); border: none;">LOGIN</a>
                             <div class="bottom">
-                                <span class="helper-text m-b-10"><i class="fa fa-lock"></i><a href="{{route('forget_password')}}">Forgot password?</a></span>
+                                <span class="helper-text m-b-10"><i class="fa fa-lock"></i><a href="{{route('password.request')}}">Forgot password?</a></span>
                             </div>
                         </form>
                     </div>
