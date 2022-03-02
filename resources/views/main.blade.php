@@ -166,10 +166,13 @@ h1 {
                     Acount Type 
                     <img class="img-fluid" src="https://www.star-clicks.com/images/gold-member-icon.png" alt="" width="100">  
                 </h3>
+                @if (isset($status))
+                    <div class="alert alert-danger">{{$status}}</div>
+                @endif
             </div>
             <div class="row">
                 <div class="col-3 col-md-4 col-lg-4">
-                    <a href="{{route('recharge')}}">
+                    <a href="{{route('deposit')}}">
                             <img class="img-fluid" src="{{asset('recharge.png')}}" alt="" width="80">
                             <p class="white-text">Recharge</p> 
                     </a>

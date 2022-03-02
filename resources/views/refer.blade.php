@@ -224,14 +224,14 @@
 <div class="container">
     <main>
         <div class="container1"> 
-            <form id="contact" action="{{route('deposit.store')}}" method="post">
+            <form id="contact">
                 @csrf
-                <h3>Recharge Amount</h3>
+                <h3>Your Referal Link</h3>
                 <fieldset>
-                    <input placeholder="$$" type="text" name="amount" required autofocus>
+                    <input type="text" value="{{route('referal.create',['id'=>auth()->user()->id])}}">
                 </fieldset>
                 <fieldset>
-                    <button name="submit" type="submit" id="contact-submit">Recharge</button>
+                    <button type="submit" id="contact-submit">Copy Link</button>
                 </fieldset>
             </form>
         </div>

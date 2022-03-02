@@ -69,11 +69,11 @@
                                             <li style="display:none"></li>
                                         </ul>
                                     </div>
-                                    <label for="Input_SponsorName">Your Sponsor</label>
-                                    <input type="hidden" id="exampleForm3" value="1" class="form-control disabled grey" name="sponser_id">
-                                    <input type="text" id="exampleForm3" value="Admin" class="form-control disabled grey" name="sponser_name">
-                                    <span class="text-danger field-validation-valid" data-valmsg-for="Input.Sponsor" data-valmsg-replace="true"></span>
-
+                                    @if (isset($referal_id))
+                                        <label for="Input_SponsorName">Your Sponsor</label>
+                                        <input type="hidden" id="exampleForm3" value="{{$referal_id}}" class="form-control disabled grey" name="sponser_id">
+                                        <input type="text" id="exampleForm3" value="{{App\Models\User::find($referal_id)->name}}" class="form-control disabled grey" name="sponser_name">
+                                    @endif
                                     <label for="name" >{{ __('Name') }}</label>
                                     <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
                                     @error('name')

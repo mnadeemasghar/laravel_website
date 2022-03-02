@@ -2,20 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Recharge;
-use App\Models\User;
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class ReferalController extends Controller
 {
-    public function deposits($id){
-        $deposits = Recharge::where('user_id',$id)->get();
-        return view('admin.users.deposits')->with('deposits',$deposits);
-    }
-    public function submitted(){
-        $users = User::where('role','!=','admin')->where('status','submitted')->get();
-        return view('admin.users.index')->with('users',$users);
-    }
     /**
      * Display a listing of the resource.
      *
@@ -23,8 +13,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::where('role','!=','admin')->get();
-        return view('admin.users.index')->with('users',$users);
+        //
     }
 
     /**
@@ -32,9 +21,10 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $referal_id = $request->id;
+        return view('auth.register')->with('referal_id',$referal_id);
     }
 
     /**
@@ -45,7 +35,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**

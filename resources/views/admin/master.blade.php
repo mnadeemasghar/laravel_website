@@ -119,7 +119,7 @@
                         <ul>
                             <li><a href="{{route('users.index')}}">All Users</a></litName>
                             <li><a href="">Active Users</a></li>
-                            <li><a href="">Un-Active Users</a></li>
+                            <li><a href="{{route('users.submitted')}}">Submitted Users</a></li>
                         </ul=>
                     </li>
                    

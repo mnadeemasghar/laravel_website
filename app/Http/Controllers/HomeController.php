@@ -30,14 +30,15 @@ class HomeController extends Controller
         }
         else{
             if(Auth::user()->status == "pending"){
-                return view('package')->with('status',"Your Profile is in Pending Status");
+                $status = "Your Profile is Pending";
             }
             else if(Auth::user()->status == "submitted"){
-                return view('package')->with('status',"Your application has been submitted");
+                $status = "Your Profile Requested is Submitted";
             }
-            else if (Auth::user()->status == "active"){
-                return view('main');
+            else {
+                $status = null;
             }
+            return view('main')->with('status',$status);
         }
     }
 }

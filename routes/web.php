@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\RechargeController;
+use App\Http\Controllers\ReferalController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
@@ -71,16 +73,18 @@ Route::get('withdraw', function () {
 })->name('withdraw');
 
 Route::get('referal', function () {
-    return view('referal');
+    return view('refer');
 })->name('referal');
 
 Route::get('package', function () {
     return view('package');
 })->name('package');
 
-Route::get('deposit', function () {
-    return view('deposit');
-})->name('deposit');
+Route::get('referal-link/{id}', [ReferalController::class,'create'])->name('referal.create');
+
+Route::get('deposit', [RechargeController::class,'create'])->name('deposit');
+Route::post('deposit', [RechargeController::class,'store'])->name('deposit.store');
+Route::get('change_status/{id}', [RechargeController::class,'change_status'])->name('deposit.change_status');
 
 Route::get('ads', function () {
     return view('ads');
@@ -126,3 +130,5 @@ Auth::routes(['verify' => true]);
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/users', [UserController::class, 'index'])->name('users.index');
+Route::get('/users/submitted', [UserController::class, 'submitted'])->name('users.submitted');
+Route::get('/users/deposits/{id}', [UserController::class, 'deposits'])->name('users.deposits');

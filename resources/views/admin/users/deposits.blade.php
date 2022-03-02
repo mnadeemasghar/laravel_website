@@ -72,27 +72,23 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Name</th>
-                <th>Email</th>
+                <th>Amount</th>
                 <th>Status</th>
                 <th>Created At</th>
-                <th>Updated At</th>
-                <th>Action</th>
             </tr>
         </thead>
         <tbody>
-            @if (isset($users) && $users->count() > 0)
-                @foreach ($users as $user)
+            @if (isset($deposits) && $deposits->count() > 0)
+                @foreach ($deposits as $deposits)
                     <tr>
-                        <td>{{$user->id}}</td>
-                        <td>{{$user->name}}</td>
-                        <td>{{$user->email}}</td>
-                        <td>{{$user->status}}</td>
-                        <td>{{$user->created_at}}</td>
-                        <td>{{$user->updated_at}}</td>
+                        <td>{{$deposits->id}}</td>
+                        <td>{{$deposits->amount}}</td>
                         <td>
-                            <a href="{{route('users.deposits',['id'=>$user->id])}}" class="btn btn-primary">View Detail</a>
+                            <a href="{{route('deposit.change_status',['id'=>$deposits->id])}}" class="btn">
+                                {{$deposits->status}}
+                            </a>
                         </td>
+                        <td>{{$deposits->created_at}}</td>
                     </tr>
                 @endforeach
             @endif
