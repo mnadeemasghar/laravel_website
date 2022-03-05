@@ -172,10 +172,11 @@ h1 {
             </div>
             <div class="row">
                 <div class="col-3 col-md-4 col-lg-4">
-                    <a href="{{route('deposit')}}">
-                            <img class="img-fluid" src="{{asset('recharge.png')}}" alt="" width="80">
-                            <p class="white-text">Recharge</p> 
+                    <a href="{{route('ads')}}">
+                        <img class="img-fluid" src="{{asset('ads.png')}}" alt="" width="80">
+                        <p class="white-text">Ads</p> 
                     </a>
+                    
                 </div>
                 <div class="col-3 col-md-4 col-lg-4">
                     <a href="{{route('withdraw')}}">
@@ -199,59 +200,51 @@ h1 {
 
 
 <div class="container text-center mt-5 mb-5">
+    <h4>UnLocked Packages</h4>
     <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 container_foto">
-            <div class="container_foto">
-                <div class="ver_mas text-center">
-                    <span  class="lnr lnr-eye">Level 1 Package</span>
+        @if (isset($unlocked_packages) && $unlocked_packages->count() > 0)
+            @foreach ($unlocked_packages as $unlocked_package)
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 container_foto">
+                    <div class="container_foto">
+                        <div class="ver_mas text-center">
+                            <span  class="lnr lnr-eye">{{$unlocked_package->name}}</span>
+                        </div>
+                        <article class="text-left">
+                            <h2>{{$unlocked_package->requirements}}</h2>
+                            <h4>{{$unlocked_package->description}}</h4>
+                            <h4>Not get any rewards</h4>
+                        </article>
+                        <img src="level1.jpeg" alt="">
+                    </div>
                 </div>
-                <article class="text-left">
-                    <h2>Unlocking Requirements <br>50-500$</h2>
-                    <h4>Team Benefit Start More Than 8 Members</h4>
-                    <h4>Not get any rewards</h4>
-                </article>
-                <img src="level1.jpeg" alt="">
-            </div>
-        </div>      
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 container_foto">
-            <div class="container_foto">
-                <div class="ver_mas text-center">
-                    <span  class="lnr lnr-eye">Level 1 Package</span>
+            @endforeach
+        @else
+        {{__("No Package Available")}}
+        @endif
+    </div>
+    <h4>Locked Packages</h4>
+    <div class="row">
+        @if (isset($locked_packages) && $locked_packages->count() > 0)
+            @foreach ($locked_packages as $locked_package)
+            <a href="{{route('deposit',['package_id'=>$locked_package->id])}}">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 container_foto">
+                    <div class="container_foto">
+                        <div class="ver_mas text-center">
+                            <span  class="lnr lnr-eye">{{$locked_package->name}}</span>
+                        </div>
+                        <article class="text-left">
+                            <h2>{{$locked_package->requirements}}</h2>
+                            <h4>{{$locked_package->description}}</h4>
+                            <h4>Not get any rewards</h4>
+                        </article>
+                        <img src="level1.jpeg" alt="">
+                    </div>
                 </div>
-                <article class="text-left">
-                    <h2>Unlocking Requirements <br>50-500$</h2>
-                    <h4>Team Benefit Start More Than 8 Members</h4>
-                    <h4>Not get any rewards</h4>
-                </article>
-                <img src="level1.jpeg" alt="">
-            </div>
-        </div>      
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 container_foto">
-            <div class="container_foto">
-                <div class="ver_mas text-center">
-                    <span  class="lnr lnr-eye">Level 1 Package</span>
-                </div>
-                <article class="text-left">
-                    <h2>Unlocking Requirements <br>50-500$</h2>
-                    <h4>Team Benefit Start More Than 8 Members</h4>
-                    <h4>Not get any rewards</h4>
-                </article>
-                <img src="level1.jpeg" alt="">
-            </div>
-        </div>      
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 container_foto">
-            <div class="container_foto">
-                <div class="ver_mas text-center">
-                    <span  class="lnr lnr-eye">Level 1 Package</span>
-                </div>
-                <article class="text-left">
-                    <h2>Unlocking Requirements <br>50-500$</h2>
-                    <h4>Team Benefit Start More Than 8 Members</h4>
-                    <h4>Not get any rewards</h4>
-                </article>
-                <img src="level1.jpeg" alt="">
-            </div>
-        </div>      
+            </a>
+            @endforeach
+        @else
+        {{__("No Package Available")}}
+        @endif
     </div>
 </div>
 

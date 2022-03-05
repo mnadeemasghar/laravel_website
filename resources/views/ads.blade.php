@@ -315,24 +315,30 @@
 
 <div class="container mt-3">
     <div class="row ">
-        <div class="col-xl-3 col-lg-3 col-md-3 col-6">
-            <a data-toggle="modal" data-target="#exampleModalCenter" href="">
-                <div class="card l-bg-cherry">
-                    <div class="card-statistic-3 p-3">
-                        <div class="card-icon card-icon-large">
-                            <img src="binance.png" alt="" width="60">
-                        </div>
-                        <div class="mb-4">
-                            <h5 class="card-title mb-0">Binance</h5>
-                        </div>
-                        <div class="mt-1">
-                            <h5 class="card-title mb-0 btn btn-info" >Invest</h5>
+        @if (isset($ads) && $ads->count() > 0)
+            @foreach ($ads as $ad)
+            <div class="col-xl-3 col-lg-3 col-md-3 col-6">
+                <a data-toggle="modal" data-target="#exampleModalCenter" href="">
+                    <div class="card l-bg-cherry">
+                        <div class="card-statistic-3 p-3">
+                            <div class="card-icon card-icon-large">
+                                <img src="binance.png" alt="" width="60">
+                            </div>
+                            <div class="mb-4">
+                                <h5 class="card-title mb-0">{{$ad->title}}</h5>
+                            </div>
+                            <div class="mt-1">
+                                <h5 class="card-title mb-0 btn btn-info" >Invest</h5>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </a>
-        </div>
-        <div class="col-xl-3 col-lg-3 col-md-3 col-6">
+                </a>
+            </div>
+            @endforeach
+        @else
+        {{__("No Ad Available")}}
+        @endif
+        <!-- <div class="col-xl-3 col-lg-3 col-md-3 col-6">
             <a href="">
                 <div class="card l-bg-cherry">
                     <div class="card-statistic-3 p-3">
@@ -382,7 +388,7 @@
                     </div>
                 </div>
             </a>
-        </div>
+        </div> -->
     </div>
 </div>
 

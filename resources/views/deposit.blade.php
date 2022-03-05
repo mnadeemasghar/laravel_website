@@ -223,12 +223,33 @@
 
 <div class="container">
     <main>
-        <div class="container1"> 
-            <form id="contact" action="{{route('deposit.store')}}" method="post">
+        <div class="container1">
+            <form id="contact" action="{{route('deposit.store',['package_id'=>$package_id])}}" method="post" enctype="multipart/form-data">
+                <div class="card m-2">
+                    <div class="card-header">
+                        <div class="card-title">Binance</div>
+                    </div>
+                    <img src="{{asset('qr.jpeg')}}" alt="" srcset="" class="img-fluid">
+                    <div class="card-footer">
+                        TQWFmq4gTcGp92Fnf9yYKbA2Vh4qGsKckn
+                    </div>
+                </div>
+                <div class="card m-2">
+                    <div class="card-header">
+                        <div class="card-title">Payoneer</div>
+                    </div>
+                    <div class="card-footer">
+                        54321@enskypass.com
+                    </div>
+                </div>
                 @csrf
                 <h3>Recharge Amount</h3>
                 <fieldset>
                     <input placeholder="$$" type="text" name="amount" required autofocus>
+                </fieldset>
+                <h3>Screenshot</h3>
+                <fieldset>
+                    <input type="file" name="image" required>
                 </fieldset>
                 <fieldset>
                     <button name="submit" type="submit" id="contact-submit">Recharge</button>

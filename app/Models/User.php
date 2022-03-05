@@ -41,4 +41,8 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    function package(){
+       return $this->belongsToMany(Package::class,'recharges','user_id','package_id');
+    }
 }

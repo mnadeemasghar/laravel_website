@@ -71,6 +71,7 @@
     <table class="table">
         <thead>
             <tr>
+                <th>Image</th>
                 <th>ID</th>
                 <th>Amount</th>
                 <th>Status</th>
@@ -81,6 +82,9 @@
             @if (isset($deposits) && $deposits->count() > 0)
                 @foreach ($deposits as $deposits)
                     <tr>
+                        <td>
+                            <img src="{{asset('screenshot')}}/{{$deposits->image}}" class="img-fluid">
+                        </td>
                         <td>{{$deposits->id}}</td>
                         <td>{{$deposits->amount}}</td>
                         <td>

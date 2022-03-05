@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RechargeController;
 use App\Http\Controllers\ReferalController;
@@ -82,14 +83,12 @@ Route::get('package', function () {
 
 Route::get('referal-link/{id}', [ReferalController::class,'create'])->name('referal.create');
 
-Route::get('deposit', [RechargeController::class,'create'])->name('deposit');
+Route::get('deposit/{package_id}', [RechargeController::class,'create'])->name('deposit');
 Route::post('deposit', [RechargeController::class,'store'])->name('deposit.store');
 Route::get('change_status/{id}', [RechargeController::class,'change_status'])->name('deposit.change_status');
 
-Route::get('ads', function () {
-    return view('ads');
-})->name('ads');
 
+Route::get('ads',[AdController::class,'index'])->name('ads');
 
 
 

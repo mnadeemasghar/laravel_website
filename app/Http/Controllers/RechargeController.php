@@ -39,9 +39,9 @@ class RechargeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($package_id)
     {
-        return view('deposit');
+        return view('deposit')->with('package_id',$package_id);
     }
 
     /**
@@ -52,13 +52,21 @@ class RechargeController extends Controller
      */
     public function store(Request $request)
     {
+        
         $user_id = Auth::user()->id;
+        
+        $file = $request->file('image');
+        $name = $user_id ."-". time() . '.' . $file->getClientOriginalExtension();
+        $request->file('image')->move("screenshot", $name);
+        
         $amount = $request->amount;
         $status = 'submitted';
         $recharge = Recharge::create([
             'user_id' => $user_id,
             'amount' => $amount,
-            'status' => $status
+            'status' => $status,
+            'image' => $name,
+            'package_id' => $request->package_id,
         ]);
         if($recharge){
             $user = User::find($user_id);

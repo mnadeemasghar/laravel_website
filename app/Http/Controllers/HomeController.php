@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Package;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -25,10 +27,18 @@ class HomeController extends Controller
     public function index()
     {
         // return view('home');
+        $user_id = Auth::user()->id;
         if(Auth::user()->role == 'admin'){
             return redirect()->route('admin.home');
         }
         else{
+
+            $unlocked_packages = Package::wherehas('user',function ($q){
+                $q->where('users.id','=',Auth::id());
+            })->get();
+            $locked_packages = Package::whereDoesntHave('user',function ($q){
+                $q->where('users.id','=',Auth::id());
+            })->get();
             if(Auth::user()->status == "pending"){
                 $status = "Your Profile is Pending";
             }
@@ -38,7 +48,7 @@ class HomeController extends Controller
             else {
                 $status = null;
             }
-            return view('main')->with('status',$status);
+            return view('main')->with('status',$status)->with('locked_packages',$locked_packages)->with('unlocked_packages',$unlocked_packages);
         }
     }
 }
