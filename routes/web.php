@@ -1,10 +1,12 @@
 <?php
 
 use App\Http\Controllers\AdController;
+use App\Http\Controllers\EarningController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RechargeController;
 use App\Http\Controllers\ReferalController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\WithdrawController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -69,9 +71,9 @@ Route::get('recharge', function () {
     return view('recharge');
 })->name('recharge');
 
-Route::get('withdraw', function () {
-    return view('withdraw');
-})->name('withdraw');
+// Route::get('withdraw', function () {
+    
+// })->name('withdraw');
 
 Route::get('referal', function () {
     return view('refer');
@@ -90,7 +92,14 @@ Route::get('change_status/{id}', [RechargeController::class,'change_status'])->n
 
 Route::get('ads',[AdController::class,'index'])->name('ads');
 
+Route::get('earnings',[EarningController::class,'index'])->name('earnings.index');
+Route::get('earnings/store/{ad_id}',[EarningController::class,'store'])->name('earnings.store');
 
+Route::get('withdraws',[WithdrawController::class,'index'])->name('withdraws.index');
+Route::get('withdraws/pendings',[WithdrawController::class,'pending'])->name('withdraws.pending');
+Route::get('withdraws/create',[WithdrawController::class,'create'])->name('withdraws.create');
+Route::post('withdraws/store',[WithdrawController::class,'store'])->name('withdraws.store');
+Route::post('withdraws/update',[WithdrawController::class,'update'])->name('withdraws.update');
 
 
 

@@ -45,4 +45,7 @@ class User extends Authenticatable implements MustVerifyEmail
     function package(){
        return $this->belongsToMany(Package::class,'recharges','user_id','package_id');
     }
+    function recharge(){
+       return $this->hasMany(Recharge::class,'user_id');
+    }
 }

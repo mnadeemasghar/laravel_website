@@ -179,7 +179,13 @@ h1 {
                     
                 </div>
                 <div class="col-3 col-md-4 col-lg-4">
-                    <a href="{{route('withdraw')}}">
+                    <a href="{{route('earnings.index')}}">
+                        <img class="img-fluid" src="{{asset('withdraw.png')}}" alt="" width="80">
+                        <p class="white-text">Earnings</p> 
+                    </a>
+                </div>
+                <div class="col-3 col-md-4 col-lg-4">
+                    <a href="{{route('withdraws.create')}}">
                         <img class="img-fluid" src="{{asset('withdraw.png')}}" alt="" width="80">
                         <p class="white-text">Withdraw</p> 
                     </a>

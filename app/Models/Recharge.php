@@ -10,4 +10,8 @@ class Recharge extends Model
 {
     use HasFactory, SoftDeletes;
     protected $fillable = ['user_id','amount','status','image','package_id'];
+
+    function package(){
+        return $this->belongsTo(Package::class);
+     }
 }

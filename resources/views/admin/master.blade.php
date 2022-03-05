@@ -120,7 +120,14 @@
                             <li><a href="{{route('users.index')}}">All Users</a></litName>
                             <li><a href="">Active Users</a></li>
                             <li><a href="{{route('users.submitted')}}">Submitted Users</a></li>
-                        </ul=>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#forms" class="has-arrow mb-1"><i class="fa fa-users"></i><span>Withdraws</span></a>
+                        <ul>
+                            <li><a href="{{route('withdraws.index')}}">All Withdraws</a></litName>
+                            <li><a href="{{route('withdraws.pending')}}">Pending Withdraws</a></li>
+                        </ul>
                     </li>
                    
                 </ul>

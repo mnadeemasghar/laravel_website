@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Ad;
 use App\Models\Earning;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class EarningController extends Controller
 {
@@ -14,7 +16,9 @@ class EarningController extends Controller
      */
     public function index()
     {
-        //
+        $user_id = Auth::id();
+        $earnings = Earning::where('user_id',$user_id)->get();
+        return view('earnings')->with('earnings',$earnings);
     }
 
     /**
@@ -33,9 +37,18 @@ class EarningController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store($ad_id)
     {
-        //
+        $selected_rechaged = Auth::user()->recharge->first();
+        $earn  = $selected_rechaged->amount * $selected_rechaged->package->earn;
+        Earning::create([
+            'ad_id' => $ad_id,
+            'user_id' => Auth::id(),
+            'paid' => 'no',
+            'amount' => $earn
+        ]);
+
+        return redirect()->back()->with('message','earning stored');
     }
 
     /**

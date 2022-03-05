@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Earning extends Model
+class Withdraw extends Model
 {
     use HasFactory, SoftDeletes;
-    protected $fillable = ['ad_id','user_id','paid','amount'];
+    protected $fillable = ['user_id','amount','status'];
 }

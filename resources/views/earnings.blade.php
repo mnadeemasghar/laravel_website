@@ -314,82 +314,28 @@
 </div>
 
 <div class="container mt-3">
-    <div class="row ">
-        @if (isset($ads) && $ads->count() > 0)
-            @foreach ($ads as $ad)
-            <div class="col-xl-3 col-lg-3 col-md-3 col-6">
-                <a href="{{route('earnings.store',['ad_id'=>$ad->id])}}">
-                    <div class="card l-bg-cherry">
-                        <div class="card-statistic-3 p-3">
-                            <div class="card-icon card-icon-large">
-                                <img src="binance.png" alt="" width="60">
-                            </div>
-                            <div class="mb-4">
-                                <h5 class="card-title mb-0">{{$ad->title}}</h5>
-                            </div>
-                            <div class="mt-1">
-                                <h5 class="card-title mb-0 btn btn-info" >Invest</h5>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            @endforeach
-        @else
-        {{__("No Ad Available")}}
-        @endif
-        <!-- <div class="col-xl-3 col-lg-3 col-md-3 col-6">
-            <a href="">
-                <div class="card l-bg-cherry">
-                    <div class="card-statistic-3 p-3">
-                        <div class="card-icon card-icon-large">
-                            <img src="kucoin.png" alt="" width="60">
-                        </div>
-                        <div class="mb-4">
-                            <h5 class="card-title mb-0">Kucoin</h5>
-                        </div>
-                        <div class="mt-1">
-                            <h5 class="card-title mb-0 btn btn-info" >Invest</h5>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col-xl-3 col-lg-3 col-md-3 col-6">
-            <a href="">
-                <div class="card l-bg-cherry">
-                    <div class="card-statistic-3 p-3">
-                        <div class="card-icon card-icon-large">
-                            <img src="bitcoin.png" alt="" width="60">
-                        </div>
-                        <div class="mb-4">
-                            <h5 class="card-title mb-0">Bitcoin</h5>
-                        </div>
-                        <div class="mt-1">
-                            <h5 class="card-title mb-0 btn btn-info" >Invest</h5>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col-xl-3 col-lg-3 col-md-3 col-6">
-            <a href="">
-                <div class="card l-bg-cherry">
-                    <div class="card-statistic-3 p-3">
-                        <div class="card-icon card-icon-large">
-                            <img src="litecoin.png" alt="" width="60">
-                        </div>
-                        <div class="mb-4">
-                            <h5 class="card-title mb-0">Litecoin</h5>
-                        </div>
-                        <div class="mt-1">
-                            <h5 class="card-title mb-0 btn btn-info" >Invest</h5>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div> -->
-    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Date</th>
+                <th>Earning</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (isset($earnings) && $earnings->count() > 0)
+                @foreach ($earnings as $earning)
+                    <tr>
+                        <td>{{$earning->id}}</td>
+                        <td>{{$earning->created_at}}</td>
+                        <td>{{$earning->amount}}</td>
+                    </tr>
+                @endforeach
+            @else
+            {{__("No Earning Available")}}
+            @endif
+        </tbody>
+    </table>
 </div>
 
 
