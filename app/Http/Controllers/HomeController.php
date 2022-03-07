@@ -40,7 +40,7 @@ class HomeController extends Controller
                 $q->where('users.id','=',Auth::id());
             })->get();
             if(Auth::user()->status == "pending"){
-                $status = "Your Profile is Pending";
+                $status = "Select Your Desired Package.";
             }
             else if(Auth::user()->status == "submitted"){
                 $status = "Your Profile Requested is Submitted";

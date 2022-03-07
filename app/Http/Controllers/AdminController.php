@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Ad;
-use App\Models\Earning;
+use App\Models\Package;
+use App\Models\Recharge;
+use App\Models\User;
+use App\Models\Withdraw;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class EarningController extends Controller
+class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +17,15 @@ class EarningController extends Controller
      */
     public function index()
     {
-        $user_id = Auth::id();
-        $earnings = Earning::where('user_id',$user_id)->get();
-        return view('earnings')->with('earnings',$earnings);
+        $users = User::all()->count();
+        $packages = Package::all()->count();
+        $investments = Recharge::withTrashed()->sum('amount');
+        $withdraws = Withdraw::all()->sum('amount');
+        return view('admin.home')
+                ->with('withdraws',$withdraws)
+                ->with('investments',$investments)
+                ->with('packages',$packages)
+                ->with('users',$users);
     }
 
     /**
@@ -37,27 +44,18 @@ class EarningController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store($ad_id)
+    public function store(Request $request)
     {
-        $selected_rechaged = Auth::user()->recharge->first();
-        $earn  = $selected_rechaged->amount * ($selected_rechaged->package->earn/100);
-        Earning::create([
-            'ad_id' => $ad_id,
-            'user_id' => Auth::id(),
-            'paid' => 'no',
-            'amount' => $earn
-        ]);
-
-        return redirect()->back()->with('message','earning stored');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Earning  $earning
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Earning $earning)
+    public function show($id)
     {
         //
     }
@@ -65,10 +63,10 @@ class EarningController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Earning  $earning
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Earning $earning)
+    public function edit($id)
     {
         //
     }
@@ -77,10 +75,10 @@ class EarningController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Earning  $earning
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Earning $earning)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -88,10 +86,10 @@ class EarningController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Earning  $earning
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Earning $earning)
+    public function destroy($id)
     {
         //
     }

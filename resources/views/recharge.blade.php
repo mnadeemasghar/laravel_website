@@ -224,7 +224,7 @@
 <div class="container">
     <main>
         <div class="container1">
-            <form id="contact" action="{{route('deposit.store',['package_id'=>$package_id])}}" method="post" enctype="multipart/form-data">
+            <form id="contact" action="{{route('recharge.store')}}" method="post" enctype="multipart/form-data">
                 <div class="card m-2">
                     <div class="card-header">
                         <div class="card-title">Binance</div>
@@ -245,7 +245,7 @@
                 @csrf
                 <h3>Recharge Amount</h3>
                 <fieldset>
-                    <input class="form-control" type="number" name="amount" min="{{$min}}" max="{{$max}}" required autofocus>
+                    <input class="form-control" type="number" name="amount" required autofocus>
                 </fieldset>
                 <h3>Screenshot</h3>
                 <fieldset>

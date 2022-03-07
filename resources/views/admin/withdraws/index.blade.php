@@ -73,6 +73,7 @@
             <tr>
                 <th>ID</th>
                 <th>User ID</th>
+                <th>USDT</th>
                 <th>Amount</th>
                 <th>Status</th>
                 <th>Created At</th>
@@ -85,6 +86,7 @@
                     <tr>
                         <td>{{$withdraw->id}}</td>
                         <td>{{$withdraw->user_id}}</td>
+                        <td>{{$withdraw->user->usdt}}</td>
                         <td>{{$withdraw->amount}}</td>
                         <td>
                             <form action="{{route('withdraws.update',['withdraw'=>$withdraw])}}" method="post">

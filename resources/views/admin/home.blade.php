@@ -86,12 +86,12 @@
                             <div class="card-statistic-3 p-4">
                                 <div class="card-icon card-icon-large"><i class="fa fa-shopping-cart"></i></div>
                                 <div class="mb-4">
-                                    <h5 class="card-title mb-0">Total Bookings</h5>
+                                    <h5 class="card-title mb-0">Total Users</h5>
                                 </div>
                                 <div class="row align-items-center mb-2 d-flex">
                                     <div class="col-8">
                                         <h2 class="d-flex align-items-center mb-0">
-                                            3,243
+                                            {{$users}}
                                         </h2>
                                     </div>
                                     <!--<div class="col-4 text-right">-->
@@ -109,12 +109,12 @@
                             <div class="card-statistic-3 p-4">
                                 <div class="card-icon card-icon-large"><i class="fa fa-users"></i></div>
                                 <div class="mb-4">
-                                    <h5 class="card-title mb-0">Users</h5>
+                                    <h5 class="card-title mb-0">Total Packages</h5>
                                 </div>
                                 <div class="row align-items-center mb-2 d-flex">
                                     <div class="col-8">
                                         <h2 class="d-flex align-items-center mb-0">
-                                            15.070
+                                            {{$packages}}
                                         </h2>
                                     </div>
                                 </div>
@@ -129,12 +129,12 @@
                             <div class="card-statistic-3 p-4">
                                 <div class="card-icon card-icon-large"><i class="fa fa-ticket"></i></div>
                                 <div class="mb-4">
-                                    <h5 class="card-title mb-0">No of Employees</h5>
+                                    <h5 class="card-title mb-0">Total Investments</h5>
                                 </div>
                                 <div class="row align-items-center mb-2 d-flex">
                                     <div class="col-8">
                                         <h2 class="d-flex align-items-center mb-0">
-                                            578
+                                            {{$investments}}
                                         </h2>
                                     </div>
                                 </div>
@@ -149,12 +149,12 @@
                             <div class="card-statistic-3 p-4">
                                 <div class="card-icon card-icon-large"><i class="fa fa-cubes"></i></div>
                                 <div class="mb-4">
-                                    <h5 class="card-title mb-0">Pending Bookings</h5>
+                                    <h5 class="card-title mb-0">Total Withdraw</h5>
                                 </div>
                                 <div class="row align-items-center mb-2 d-flex">
                                     <div class="col-8">
                                         <h2 class="d-flex align-items-center mb-0">
-                                            $11.61
+                                            {{$withdraws}}
                                         </h2>
                                     </div>
                                 </div>
@@ -166,90 +166,5 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-12">
-                    <div class="row flex-row-reverse">
-                        <div class="col-xl-3 col-lg-6">
-                            <div class="card l-bg-blue-dark">
-                                <div class="card-statistic-3 p-4">
-                                    <div class="card-icon card-icon-large"><i class="fa fa-database"></i></div>
-                                    <div class="mb-4">
-                                        <h5 class="card-title mb-0">Admin Commision</h5>
-                                    </div>
-                                    <div class="row align-items-center mb-2 d-flex">
-                                        <div class="col-8">
-                                            <h2 class="d-flex align-items-center mb-0">
-                                                $3,243
-                                            </h2>
-                                        </div>
-                                    </div>
-                                    <div class="progress mt-1 " data-height="8" style="height: 8px;">
-                                        <div class="progress-bar l-bg-cyan" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6">
-                            <div class="card l-bg-blue-dark">
-                                <div class="card-statistic-3 p-4">
-                                    <div class="card-icon card-icon-large"><i class="fa fa-star"></i></div>
-                                    <div class="mb-4">
-                                        <h5 class="card-title mb-0">Total Earnings </h5>
-                                    </div>
-                                    <div class="row align-items-center mb-2 d-flex">
-                                        <div class="col-8">
-                                            <h2 class="d-flex align-items-center mb-0">
-                                                 $11062
-                                            </h2>
-                                        </div>
-                                    </div>
-                                    <div class="progress mt-1 " data-height="8" style="height: 8px;">
-                                        <div class="progress-bar l-bg-green" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6">
-                            <div class="card l-bg-blue-dark">
-                                <div class="card-statistic-3 p-4">
-                                    <div class="card-icon card-icon-large"><i class="fa fa-thumbs-up"></i></div>
-                                    <div class="mb-4">
-                                        <h5 class="card-title mb-0">Completed Orders</h5>
-                                    </div>
-                                    <div class="row align-items-center mb-2 d-flex">
-                                        <div class="col-8">
-                                            <h2 class="d-flex align-items-center mb-0">
-                                                578
-                                            </h2>
-                                        </div>
-                                    </div>
-                                    <div class="progress mt-1 " data-height="8" style="height: 8px;">
-                                        <div class="progress-bar l-bg-orange" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6">
-                            <div class="card l-bg-blue-dark">
-                                <div class="card-statistic-3 p-4">
-                                    <div class="card-icon card-icon-large"><i class="fa fa-dollar"></i></div>
-                                    <div class="mb-4">
-                                        <h5 class="card-title mb-0">Over All User Ratings</h5>
-                                    </div>
-                                    <div class="row align-items-center mb-2 d-flex">
-                                        <div class="col-8">
-                                            <h2 class="d-flex align-items-center mb-0">
-                                                21
-                                            </h2>
-                                        </div>
-                                    </div>
-                                    <div class="progress mt-1 " data-height="8" style="height: 8px;">
-                                        <div class="progress-bar l-bg-cyan" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-    
-
+            
 @endsection

@@ -10,4 +10,8 @@ class Withdraw extends Model
 {
     use HasFactory, SoftDeletes;
     protected $fillable = ['user_id','amount','status'];
+
+    function user(){
+        return $this->belongsTo(User::class,'user_id');
+    }
 }

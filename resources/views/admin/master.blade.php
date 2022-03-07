@@ -105,7 +105,7 @@
             <nav id="left-sidebar-nav" class="sidebar-nav">
                 <ul id="main-menu" class="metismenu">
                     <li class="active"><a href="{{route('home')}}"><i class="icon-home"></i><span>Dashboard</span></a></li>
-                    <li>
+                    <!-- <li>
                         <a href="#uiElements" class="has-arrow mb-1"><i class="icon-users"></i><span>Package Details</span></a>
                         <ul>
                             <li><a href=""> First Package</a></liclass=>
@@ -113,7 +113,7 @@
                             <li><a href=""> Third Package</a></liss=>
                         </ul>
                         
-                    </li>
+                    </li> -->
                     <li>
                         <a href="#forms" class="has-arrow mb-1"><i class="fa fa-users"></i><span>Users </span></a>
                         <ul>

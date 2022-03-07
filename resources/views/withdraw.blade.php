@@ -227,23 +227,57 @@
             <label for="pending_earnings">Total Earnings:</label>{{ $total_earnings ?? 0 }}<br>
             <label for="withdraw_request">Withdraw Request:</label>{{ $withdraw_request ?? 0 }}<br>
             <label for="withdraw_request">Withdraw Approved:</label>{{ $withdraw_approve ?? 0 }}<br>
-            <label for="net_balance">Net Balance:</label>{{ $net_pending_earnings ?? 0 }}
+            <label for="net_balance">Net Balance:</label>{{ $net_pending_earnings ?? 0 }}<br>
+            <label for="freeze_amount">Freeze Amount:</label>{{ $freeze_amount ?? 0 }} <br><br>
             @if (isset($net_pending_earnings) && $net_pending_earnings > 0)
+                @if (isset($net_pending_earnings) && $net_pending_earnings < 100)
+                    {{__('Minimum Withdraw for 100$')}}
+                @else
                 <form id="contact" action="{{route('withdraws.store')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <h3>Withdraw Amount</h3>
                     <fieldset>
-                        <input class="form-control" type="number" name="amount" max="{{$pending_earnings - $withdraw_request ?? 0}}" required autofocus>
+                        <input class="form-control" type="number" name="amount" max="{{$net_pending_earnings ?? 0}}" required autofocus>
+                    </fieldset>
+                    <h3>USDT Address</h3>
+                    <fieldset>
+                        <input class="form-control" type="text" name="usdt" value="{{$usdt ?? ''}}" required autofocus>
                     </fieldset>
                     <fieldset>
                         <button name="submit" type="submit" id="contact-submit">Send Request</button>
                     </fieldset>
                 </form>
-            @else
+                @endif
+            @else 
             {{__('No Earning Yet')}}
             @endif
         </div>
     </main>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Amount</th>
+                <th>Status</th>
+                <th>Created At</th>
+                <th>Updated At</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (isset($withdraw_history) && $withdraw_history->count() > 0)
+                @foreach ($withdraw_history as $history)
+                    <tr>
+                        <td>{{$history->id}}</td>
+                        <td>{{$history->amount}}</td>
+                        <td>{{$history->status}}</td>
+                        <td>{{$history->created_at}}</td>
+                        <td>{{$history->updated_at}}</td>
+                    </tr>
+                    
+                @endforeach
+            @endif
+        </tbody>
+    </table>
 </div>
 
 

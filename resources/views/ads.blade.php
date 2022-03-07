@@ -306,7 +306,7 @@
         <div class="row justify-content-center align-items-center py-5">
             <div class="col-12 py-5 ">
                 <h1 class="white-text font-weight-bold text-center py-2">
-                 Recharge
+                 Ads
                 </h1>
             </div>
         </div>
@@ -315,10 +315,10 @@
 
 <div class="container mt-3">
     <div class="row ">
-        @if (isset($ads) && $ads->count() > 0)
+        @if (isset($ads) && $ads_count > 0)
             @foreach ($ads as $ad)
             <div class="col-xl-3 col-lg-3 col-md-3 col-6">
-                <a href="{{route('earnings.store',['ad_id'=>$ad->id])}}">
+                <!-- <a href="{{route('earnings.store',['ad_id'=>$ad->id])}}" data-toggle="modal" data-target='#exampleModalCenter' > -->
                     <div class="card l-bg-cherry">
                         <div class="card-statistic-3 p-3">
                             <div class="card-icon card-icon-large">
@@ -328,108 +328,55 @@
                                 <h5 class="card-title mb-0">{{$ad->title}}</h5>
                             </div>
                             <div class="mt-1">
-                                <h5 class="card-title mb-0 btn btn-info" >Invest</h5>
+                                <a data-toggle="modal" data-target="#exampleModalCenter">
+                                    <h5 class="card-title mb-0 btn btn-info" >Invest</h5>
+                                </a>
                             </div>
                         </div>
                     </div>
-                </a>
             </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content" style="background:#dadde6;">
+                <div class="modal-body">
+                    <article class="card1 fl-left">
+                        <section class="date">
+                            <img src="binance.png" alt="" width="50" style="position: absolute;top: 41%;left: 31%;">
+                        </section>
+                        <section class="card1-cont">
+                            <small>Trade Time : 26-12-2022</small>
+                            <h3>Trade Number : 2491745912</h3>
+                            <div class="even-date">
+                                <i class="fa fa-calendar"></i>
+                                <time>
+                                    <span>Buy 25 Units of ADA Coin</span>
+                                    <span>Invest <b>250$</b></span>
+                                </time>
+                            </div>
+                            <div class="even-info">
+                                <i class="fa fa-map-marker"></i>
+                                <p>
+                                    Total amount 250$  
+                                </p>
+                                <p>
+                                    Profit 0.39$
+                                </p>
+                            </div>
+                        </section>
+                    </article>
+                    <a href="{{route('earnings.store',['ad_id'=>$ad->id])}}" class="btn btn-secondary text-center">Submit</a>
+                </div>
+                </div>
+            </div>
+            </div>
+
             @endforeach
         @else
         {{__("No Ad Available")}}
         @endif
-        <!-- <div class="col-xl-3 col-lg-3 col-md-3 col-6">
-            <a href="">
-                <div class="card l-bg-cherry">
-                    <div class="card-statistic-3 p-3">
-                        <div class="card-icon card-icon-large">
-                            <img src="kucoin.png" alt="" width="60">
-                        </div>
-                        <div class="mb-4">
-                            <h5 class="card-title mb-0">Kucoin</h5>
-                        </div>
-                        <div class="mt-1">
-                            <h5 class="card-title mb-0 btn btn-info" >Invest</h5>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col-xl-3 col-lg-3 col-md-3 col-6">
-            <a href="">
-                <div class="card l-bg-cherry">
-                    <div class="card-statistic-3 p-3">
-                        <div class="card-icon card-icon-large">
-                            <img src="bitcoin.png" alt="" width="60">
-                        </div>
-                        <div class="mb-4">
-                            <h5 class="card-title mb-0">Bitcoin</h5>
-                        </div>
-                        <div class="mt-1">
-                            <h5 class="card-title mb-0 btn btn-info" >Invest</h5>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col-xl-3 col-lg-3 col-md-3 col-6">
-            <a href="">
-                <div class="card l-bg-cherry">
-                    <div class="card-statistic-3 p-3">
-                        <div class="card-icon card-icon-large">
-                            <img src="litecoin.png" alt="" width="60">
-                        </div>
-                        <div class="mb-4">
-                            <h5 class="card-title mb-0">Litecoin</h5>
-                        </div>
-                        <div class="mt-1">
-                            <h5 class="card-title mb-0 btn btn-info" >Invest</h5>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div> -->
     </div>
-</div>
-
-
-
-
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content" style="background:#dadde6;">
-      <div class="modal-body">
-        <article class="card1 fl-left">
-            <section class="date">
-                <img src="binance.png" alt="" width="50" style="position: absolute;top: 41%;left: 31%;">
-            </section>
-            <section class="card1-cont">
-                <small>Trade Time : 26-12-2022</small>
-                <h3>Trade Number : 2491745912</h3>
-                <div class="even-date">
-                    <i class="fa fa-calendar"></i>
-                    <time>
-                        <span>Buy 25 Units of ADA Coin</span>
-                        <span>Invest <b>250$</b></span>
-                    </time>
-                </div>
-                <div class="even-info">
-                    <i class="fa fa-map-marker"></i>
-                    <p>
-                        Total amount 250$  
-                    </p>
-                    <p>
-                        Profit 0.39$
-                    </p>
-                </div>
-            </section>
-        </article>
-        <button type="button" class="btn btn-secondary text-center" data-dismiss="modal">Submit</button>
-      </div>
-    </div>
-  </div>
 </div>
 
 
